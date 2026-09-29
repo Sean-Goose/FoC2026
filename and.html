@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>And Gate</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -22,7 +22,6 @@ body {
 /* Create three unequal columns that sits next to each other */
 .column {
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Left and right column */
@@ -63,7 +62,7 @@ body {
 /* Navigation links container */
 .nav-links {
   display: flex;
-  gap: 20px; /* Space between each button/link */
+  gap: 20px; 
 }
 
 /* Individual links */
@@ -96,12 +95,23 @@ body {
   padding: 30px 45px 45px 45px;
 }
 
-.image-box {
-  width: 100%; 
+.button-group {
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 0 45px 30px;
 }
 
+.btn {
+  padding: 5px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px; 
+  cursor :pointer;
+}
+ 
 .image-box {
-  margin: 20px 0px 20px 0px;
+  margin: 15px 0px 0px 0px;
   width: 100%;       
   height: 250px;    
   overflow: hidden;  
@@ -110,7 +120,8 @@ body {
 .image-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
+  object-position: left;
 }
 
 </style>
@@ -131,12 +142,19 @@ body {
 
 <div class="row">
   <div class="column middle" style="background-color:#ffffff;">
-    <p class="column-text">This course is an introduction to the fundamentals of Computer Science that will provide students with a foundation for future courses in Computer Science. The course is a broad survey of the discipline through topics that allow students to understand the capabilities of computer systems in terms of: the computer architecture; operating systems and computer networks; software and software development; data organization and visualization; and the potential of computing machines.</p> 
+    <p class="column-text">
+      This is an example of the and gate! Click the two buttons below to see how the output changes based on the inputs. The output will only be on when both inputs are on.</p>
+    </p>
+    <div class="button-group">
+      <button class="btn" onclick="document.getElementById('myImage').src='a1.png'">A On</button>
+      <button class="btn" onclick="document.getElementById('myImage').src='b1.png'">B On</button>
+      <button class="btn" onclick="document.getElementById('myImage').src='ab1.png'">A & B On</button>
+    </div>
   </div>
   <div class="column side" style="background-color:#ffffff;">
     <div class="image-box">
-    <img src="https://cdn.cosmos.so/0e5eadc9-fc77-45bd-b86b-e0daedbb0f8c?format=webp" alt="Photo of cool computer!">
-  </div>
+      <img id="myImage" src="01.png" alt="Empty And Gate" style="width:100%">
+    </div>
   </div>
 </div>
 
