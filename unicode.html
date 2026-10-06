@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Documentation</title>  
+<title>Unicode Display</title>  
 <style>
 * {
   box-sizing: border-box;
@@ -62,15 +62,43 @@ body {
   max-width: 600px;
   font-size: 18px;
 }
-.image-container {
-  width: 110%;
-  background-color: #f8f8f8;
-  min-height: 250px;
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  gap: 15px;
 }
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #000000;
+  outline: none;
+  width: 200px;
+}
+input[type="text"]:focus {
+  border-color: #333333;
+}
+.btn {
+  background-color: #cccccc;
+  color: #4e4e4e;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover {
+  color: #696969;
+}
+.unicode-display {
+  margin-top: 30px;
+  font-size: 64px;
+  font-weight: bold;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  border-radius: 4px;
+  min-height: 120px;
 }
 .footer {
   margin-top: 80px;
@@ -85,26 +113,34 @@ body {
 <body>
   <div class="container">
     <header class="header">
-      <h2>Documentation</h2>
+      <h2>UNICODE<br>Converter</h2>
       <nav class="nav-links">
         <a href="index.html">Course</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" class="active">Projects</a>
         <a href="concepts.html">Concepts</a>
         <a href="database.html">Database</a>
-        <a href="documentation.html" class="active">Documentation</a>
+        <a href="documentation.html">Documentation</a>
         <a href="devteam.html">Dev Team</a>
       </nav>
     </header>
 
     <main class="content-grid">
       <div class="main-text">
-        <p>Click on the image to see the documentation for this course.</p> 
-      </div>
-      <div class="image-column">
-        <div class="image-container">
-          <img src="docimage.png" alt="Documentation Links">
-          <a href="https://drive.google.com/file/d/1emYNyAIPOih0PMWEr-woOZiIIOPaUv4t/view?usp=sharing" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+        <p>Please input a UNICODE number below (e.g., 2602 for an umbrella, or 26bd for a soccer ball) to display the character.</p>
+        
+        <div class="input-group">
+          <input id="numb" type="text" placeholder="Enter hex code...">
+          <button class="btn" type="button" onclick="myFunction()">Submit</button>
         </div>
+        
+        <p style="margin-top: 20px;">
+          You can see the full list of every UNICODE character 
+          <a href="https://symbl.cc/en/unicode-table/" target="_blank" style="color: #a29e9c; text-decoration: none; font-weight: bold;">"Here!"</a>.
+        </p>
+      </div>
+
+      <div class="image-column">
+        <div class="unicode-display" id="demo"></div>
       </div>
     </main>
 
@@ -112,5 +148,14 @@ body {
       <p>2026 Fundamentals of Computing. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("numb").value;
+      // Convert to HTML entity for the hex code
+      var unicode = "&#x" + x + ";";
+      document.getElementById("demo").innerHTML = unicode;
+    }
+  </script>
 </body>
 </html>

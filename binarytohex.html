@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Documentation</title>  
+<title>Binary to Hexadecimal</title>  
 <style>
 * {
   box-sizing: border-box;
@@ -43,13 +43,13 @@ body {
   color: #000000;
   font-size: 18px;
   font-weight: 500;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
+  transition: color 0.2s ease;
 }
 .nav-links a:hover {
-  color: #696969;
+  color: #969696;
 }
 .nav-links a.active {
-  color: #696969;
+  color: #969696;
   padding-bottom: 4px;
 }
 .content-grid {
@@ -62,10 +62,39 @@ body {
   max-width: 600px;
   font-size: 18px;
 }
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #000000;
+  outline: none;
+  width: 200px;
+}
+.btn {
+  background-color: #cccccc;
+  color: #4e4e4e;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover {
+  color: #696969;
+}
+.result-display {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
 .image-container {
   width: 110%;
   background-color: #f8f8f8;
-  min-height: 250px;
 }
 .image-container img {
   width: 100%;
@@ -85,32 +114,49 @@ body {
 <body>
   <div class="container">
     <header class="header">
-      <h2>Documentation</h2>
+      <h2>Binary to Hexadecimal<br>Converter</h2>
       <nav class="nav-links">
         <a href="index.html">Course</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" class="active">Projects</a>
         <a href="concepts.html">Concepts</a>
         <a href="database.html">Database</a>
-        <a href="documentation.html" class="active">Documentation</a>
+        <a href="documentation.html">Documentation</a>
         <a href="devteam.html">Dev Team</a>
       </nav>
     </header>
 
     <main class="content-grid">
       <div class="main-text">
-        <p>Click on the image to see the documentation for this course.</p> 
+        <p>Enter any 4-digit binary number below to convert it to its hexadecimal equivalent:</p>
+        
+        <div class="input-group">
+          <input type="number" id="inputBin" placeholder="e.g. 1010">
+          <button class="btn" onclick="binToHex()">Submit</button>
+        </div>
+
+        <div class="result-display">
+          Hexadecimal Value: <span id="demo"></span>
+        </div>
       </div>
+
       <div class="image-column">
         <div class="image-container">
-          <img src="docimage.png" alt="Documentation Links">
-          <a href="https://drive.google.com/file/d/1emYNyAIPOih0PMWEr-woOZiIIOPaUv4t/view?usp=sharing" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+          <img src="https://introcs.cs.princeton.edu/java/61data/images/0-F.png" alt="Binary to Hex Diagram">
         </div>
       </div>
     </main>
 
     <footer class="footer">
-      <p>2026 Fundamentals of Computing. All rights reserved.</p>
+      <p>Powered by UB</p>
     </footer>
   </div>
+
+  <script>
+  function binToHex() {
+    var x = document.getElementById("inputBin").value;
+    var hexOut = parseInt(x, 2).toString(16).toUpperCase();
+    document.getElementById("demo").innerHTML = hexOut;
+  }
+  </script>
 </body>
 </html>

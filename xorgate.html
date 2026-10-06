@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Documentation</title>  
+<title>Xor Gate</title>  
 <style>
 * {
   box-sizing: border-box;
@@ -62,10 +62,31 @@ body {
   max-width: 600px;
   font-size: 18px;
 }
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background-color: #ff7034;
+  border-color: #ff7034;
+  color: #ffffff;
+}
 .image-container {
   width: 110%;
   background-color: #f8f8f8;
-  min-height: 250px;
 }
 .image-container img {
   width: 100%;
@@ -85,25 +106,30 @@ body {
 <body>
   <div class="container">
     <header class="header">
-      <h2>Documentation</h2>
+      <h2>Fundamentals of Computing</h2>
       <nav class="nav-links">
         <a href="index.html">Course</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" class="active">Projects</a>
         <a href="concepts.html">Concepts</a>
         <a href="database.html">Database</a>
-        <a href="documentation.html" class="active">Documentation</a>
+        <a href="documentation.html">Documentation</a>
         <a href="devteam.html">Dev Team</a>
       </nav>
     </header>
 
     <main class="content-grid">
       <div class="main-text">
-        <p>Click on the image to see the documentation for this course.</p> 
+        <p>This is an example of the xor gate! Click the two buttons below to see how the output changes based on the inputs. The output will only be on when either of the inputs are on but not both.</p>
+        <div class="button-group">
+          <button class="btn" onclick="document.getElementById('myImage').src='xorgate000.png'">A and B Off</button>
+          <button class="btn" onclick="document.getElementById('myImage').src='xorgate101.png'">A On and B Off</button>
+          <button class="btn" onclick="document.getElementById('myImage').src='xorgate011.png'">A Off and B On</button>
+          <button class="btn" onclick="document.getElementById('myImage').src='xorgate110.png'">A On and B On</button>
+        </div>
       </div>
       <div class="image-column">
         <div class="image-container">
-          <img src="docimage.png" alt="Documentation Links">
-          <a href="https://drive.google.com/file/d/1emYNyAIPOih0PMWEr-woOZiIIOPaUv4t/view?usp=sharing" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+          <img id="myImage" src="xorgate000.png" alt="Xor Gate Diagram">
         </div>
       </div>
     </main>

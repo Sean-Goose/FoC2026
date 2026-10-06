@@ -1,159 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Projects</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects</title>  
 <style>
 * {
   box-sizing: border-box;
-}
-
-body {
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-/* Container for flexboxes */
-.row {
-  display: -webkit-flex;
-  display: flex;
-}
-
-/* Create three unequal columns that sits next to each other */
-.column {
-  padding: 10px;
-}
-
-/* Left and right column */
-.column.side {
-   -webkit-flex: 1;
-   -ms-flex: 1;
-   flex: 1;
-}
-
-.column {
-  /* width | style | color */
-  outline: 2px solid #b4b4b4; 
-}
-
-/* Middle column */
-.column.middle {
-  -webkit-flex: 2;
-  -ms-flex: 3;
-  flex: 3;
-}
-
-/* Header container: Flexbox handles left-to-right alignment */
-.header {
-  background-color: #f1f1f1;
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;            
-  padding: 15px 20px 15px;             
-}
-
-/* Adjust the title margin */
-.header h2 {
   margin: 0;
-  font-size: 32px;
-  font-weight: 750;
+  padding: 0;
 }
-
-/* Navigation links container */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 22px; 
+  line-height: 1.6;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 2px solid #000000;
+  margin-bottom: 30px;
+}
+.header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
 .nav-links {
   display: flex;
-  gap: 20px; /* Space between each button/link */
+  gap: 35px;
 }
-
-/* Individual links */
 .nav-links a {
-  text-decoration: none;      
-  color: #333;                
-  font-size: 16px;
-  font-weight: 500;          
-  border-radius: 6px;
-}
-
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-
-/* Responsive layout */
-@media (max-width: 600px) {
-  .row {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
-}
-
-.column-text {
-  font-size: 16px;
-  line-height: 1.6;
-  padding: 30px 45px 45px 45px;
-}
-
-.project-link {
-  font-size: 16px;
   text-decoration: none;
-  color: #333;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
-
-.image-box {
-  width: 100%; 
+.nav-links a:hover {
+  color: #969696;
 }
-
-.image-box {
-  margin: 20px 0px 20px 0px;
-  width: 100%;       
-  height: 250px;    
-  overflow: hidden;  
+.nav-links a.active {
+  color: #969696;
+  padding-bottom: 4px;
 }
-
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
 }
-
+.main-text {
+  max-width: 600px;
+  font-size: 18px;
+}
+.project-list {
+  margin-top: 40px;
+  list-style: none;
+}
+.project-list li {
+  color: #292929;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.project-link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #292929;
+  font-weight: 500;
+  display: inline-block;
+  border-left: 3px solid transparent;
+  padding-left: 0px;
+  transition: all 0.2s ease;
+}
+.project-link:hover {
+  color: #969696;
+  padding-left: 12px;
+  font-size: 18px;
+}
+.image-container {
+  width: 110%;
+  background-color: #f8f8f8;
+}
+.image-container img {
+  width: 110%;
+  height: auto;
+  display: block;
+}
+.footer {
+  margin-top: 80px;
+  padding: 40px 0;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h2>Projects</h2>
-  <nav class="nav-links">
-    <a href="index.html">Course</a>
-    <a href="projects.html">Projects</a>
-    <a href="concepts.html">Concepts</a>
-    <a href="database.html">Database</a>
-    <a href="documentation.html">Documentation</a>
-    <a href="devteam.html">Dev Team</a>
-  </nav>
-</div>
+  <div class="container">
+    <header class="header">
+      <h2>Projects</h2>
+      <nav class="nav-links">
+        <a href="index.html">Course</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="database.html">Database</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="devteam.html">Dev Team</a>
+      </nav>
+    </header>
 
-<div class="row">
-  <div class="column middle" style="background-color:#ffffff;">
-    <p class="column-text">The final project will consist of 4 sections. Each section has a deadline to complete. A complete description of the project can be found on the course moodle site. It will consist of launching a website built with, html, css, and javascript and hosted on github. This site is a benchmark for the Final Project. See Project Specification on Moodle Site.<br><br>
-      <a class="project-link" href="colorc.html">Color Test</a><br>
-      <a class="project-link" href="and.html">And Gate</a><br>
-      <a class="project-link" href="not.html">Not Gate</a><br>
-      <a class="project-link" href="or.html">Or Gate</a><br>
-      <a class="project-link" href="xor.html">Xor Gate</a><br>
-    </p>
-  </div>
-  <div class="column side" style="background-color:#ffffff;">
-    <div class="image-box">
-      <img src="" alt="">
-    </div>
-  </div>
-</div>
+    <main class="content-grid">
+      <div class="main-text">
+        <p>
+          The final project will consist of 4 sections. Each section has a deadline to complete. 
+          A complete description of the project can be found on the course moodle site. It will 
+          consist of launching a website built with html, css, and javascript and hosted on github. 
+          This site is a benchmark for the Final Project. See Project Specification on Moodle Site.
+        </p>
 
-<div class="footer">
-  <p>Footer</p>
-</div>
+        <div class="project-list">
+          <a class="project-link" href="colorc.html">Color Test</a><br>
+          <a class="project-link" href="and.html">And Gate</a><br>
+          <a class="project-link" href="not.html">Not Gate</a><br>
+          <a class="project-link" href="or.html">Or Gate</a><br>
+          <a class="project-link" href="xor.html">Xor Gate</a><br>
+          <a class="project-link" href="unicode.html">Unicode Test</a><br>
+          <a class="project-link" href="binarytohex.html">Binary to Hexadecimal</a><br>
+          <a class="project-link" href="ascii.html">ASCII Converter</a><br>
+          <a class="project-link" href="MLinstructions.html">Interactive Machine Language</a><br>
+        </div>
+      </div>
+
+      <div class="image-column">
+        <div class="image-container">
+          <img src="projects.png" alt="Projects Thumbnail">
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>2026 Fundamentals of Computing. All rights reserved.</p>
+    </footer>
+  </div>
 
 </body>
 </html>
