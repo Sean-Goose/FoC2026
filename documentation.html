@@ -47,6 +47,8 @@ body {
 }
 .nav-links a:hover {
   color: #696969;
+  font-size: 16px;
+  transition: all 0.2s ease, border-bottom 0.2s ease;
 }
 .nav-links a.active {
   color: #696969;
@@ -62,8 +64,14 @@ body {
   max-width: 600px;
   font-size: 18px;
 }
+.image-column {
+  display: flex;
+  justify-content: justify;
+  align-items: left;
+}
+
 .image-container {
-  width: 110%;
+  width: 100%;
   background-color: #f8f8f8;
   min-height: 250px;
 }
@@ -71,6 +79,10 @@ body {
   width: 100%;
   height: auto;
   display: block;
+}
+.image-container:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
 }
 .footer {
   margin-top: 80px;
@@ -102,8 +114,9 @@ body {
       </div>
       <div class="image-column">
         <div class="image-container">
-          <img src="docimage.png" alt="Documentation Links">
-          <a href="https://drive.google.com/file/d/1emYNyAIPOih0PMWEr-woOZiIIOPaUv4t/view?usp=sharing" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+          <a href="https://drive.google.com/file/d/1emYNyAIPOih0PMWEr-woOZiIIOPaUv4t/view?usp=sharing" target="_blank">
+            <img src="docimage.png" alt="Documentation Links">
+          </a>
         </div>
       </div>
     </main>
