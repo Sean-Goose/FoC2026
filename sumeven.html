@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+<title>Sum of Even</title>
+</head>
+<body>
+<p> Enter a number: </p>
+
+  <input type="number" id="num1">
+  <button onclick="addEven()">=</button>
+ 
+<p>The sum of the even numbers up to that number is: </p>
+
+  <h2 id="result"></h2>
+
+<script>
+function addEven() {
+  let stop = +num1.value; 
+  let evensum = 0; 
+  let n1 = 2;      
+    while (n1 <= stop) {
+    evensum += n1; 
+    n1 += 2;       
+  }
+
+  let resultElement = document.getElementById('result');
+  resultElement.textContent = evensum;
+}
+</script>
+
+</body>
+</html>
