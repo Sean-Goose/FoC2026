@@ -1,114 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Unicode Display</title>  
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-color: #ffffff;
-  color: #000000;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 22px; 
-  line-height: 1.6;
-}
-.container {
-  width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 0;
-  border-bottom: 2px solid #000000;
-  margin-bottom: 30px;
-}
-.header h2 {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-}
-.nav-links {
-  display: flex;
-  gap: 35px;
-}
-.nav-links a {
-  text-decoration: none;
-  color: #000000;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
-}
-.nav-links a:hover {
-  color: #696969;
-}
-.nav-links a.active {
-  color: #696969;
-  padding-bottom: 4px;
-}
-.content-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-.main-text {
-  max-width: 600px;
-  font-size: 18px;
-}
-.input-group {
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-  gap: 15px;
-}
-input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #000000;
-  outline: none;
-  width: 200px;
-}
-input[type="text"]:focus {
-  border-color: #333333;
-}
-.btn {
-  background-color: #cccccc;
-  color: #4e4e4e;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.btn:hover {
-  color: #696969;
-}
-.unicode-display {
-  margin-top: 30px;
-  font-size: 64px;
-  font-weight: bold;
-  padding: 20px;
-  border: 1px solid #e0e0e0;
-  text-align: center;
-  border-radius: 4px;
-  min-height: 120px;
-}
-.footer {
-  margin-top: 80px;
-  padding: 40px 0;
-  border-top: 1px solid #e0e0e0;
-  text-align: center;
-  font-size: 16px;
-  color: #666666;
-}
-</style>
+  <meta charset="utf-8">
+  <title>Unicode Display</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -133,9 +28,9 @@ input[type="text"]:focus {
           <button class="btn" type="button" onclick="myFunction()">Submit</button>
         </div>
         
-        <p style="margin-top: 20px;">
+        <p class="unicode-note">
           You can see the full list of every UNICODE character 
-          <a href="https://symbl.cc/en/unicode-table/" target="_blank" style="color: #a29e9c; text-decoration: none; font-weight: bold;">"Here!"</a>.
+          <a href="https://symbl.cc/en/unicode-table/" target="_blank">"Here!"</a>.
         </p>
       </div>
 
@@ -152,7 +47,6 @@ input[type="text"]:focus {
   <script>
     function myFunction() {
       var x = document.getElementById("numb").value;
-      // Convert to HTML entity for the hex code
       var unicode = "&#x" + x + ";";
       document.getElementById("demo").innerHTML = unicode;
     }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+<title>Sum of Odd</title>
+</head>
+<body>
+<p> Enter a number: </p>
+
+  <input type="number" id="num1">
+  <button onclick="addOdd()">=</button>
+ 
+<p>The sum of the odd numbers up to that number is: </p>
+
+  <h2 id="result"></h2>
+
+<script>
+function addOdd() {
+  let stop = +num1.value; 
+  let oddsum = 0; 
+  let n1 = 1;      
+    while (n1 <= stop) {
+    oddsum += n1; 
+    n1 += 2;       
+  }
+
+  let resultElement = document.getElementById('result');
+  resultElement.textContent = oddsum;
+}
+</script>
+
+</body>
+</html>
